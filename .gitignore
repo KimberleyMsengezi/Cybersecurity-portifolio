@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+*.jpg 
+*.png 
+=======
 # Logs
 logs
 *.log
@@ -134,3 +138,4 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+>>>>>>> a2d8bad15f7636ca8224885d8ea1eb645165095d

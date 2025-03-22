@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kimberley Msengezi - Cybersecurity Portfolio</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- AOS for Scroll Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #fff;
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.light-mode {
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .logo img {
+            width: 40px;
+            margin-right: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        body.light-mode nav ul li a {
+            color: #333;
+        }
+
+        .contact-btn {
+            background: #f5a623;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        body.light-mode .theme-toggle {
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 0;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 50%;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span {
+            color: #f5a623;
+        }
+
+        .hero-content .typed-text {
+            display: inline-block;
+            border-right: 2px solid #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 2s steps(20, end), blink 0.5s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        .hero-content p {
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+
+        body.light-mode .hero-content p {
+            color: #666;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .hero-buttons a {
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero-buttons .get-started {
+            background: #3b82f6;
+            color: #fff;
+        }
+
+        .hero-buttons .contact {
+            background: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+        }
+
+        body.light-mode .hero-buttons .contact {
+            border-color: #333;
+            color: #333;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            position: fixed;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 1.5rem;
+        }
+
+        body.light-mode .social-icons a {
+            color: #333;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .section-title span {
+            color: #3b82f6;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        body.light-mode .service-card {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        body.light-mode .service-card p {
+            color: #666;
+        }
+
+        .service-card a {
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #fff;
+            padding: 8px 20px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        body.light-mode .service-card a {
+            color: #333;
+            border-color: #333;
+        }
+
+        /* About Section */
+        .about {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 0;
+            gap: 40px;
+        }
+
+        .about-content {
+            max-width: 50%;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        body.light-mode .about-content p {
+            color: #666;
+        }
+
+        .stats {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat h3 {
+            font-size: 2rem;
+            color: #f5a623;
+        }
+
+        .stat p {
+            color: #94a3b8;
+        }
+
+        body.light-mode .stat p {
+            color: #666;
+        }
+
+        .about-services {
+            max-width: 50%;
+        }
+
+        .about-services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-item img {
+            width: 30px;
+        }
+
+        /* Projects Section */
+        .operation-center {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 0;
+            gap: 40px;
+        }
+
+        .operation-images {
+            max-width: 50%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .operation-images img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .operation-content {
+            max-width: 50%;
+        }
+
+        .operation-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .operation-content p {
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        body.light-mode .operation-content p {
+            color: #666;
+        }
+
+        .operation-content ul {
+            list-style: none;
+        }
+
+        .operation-content ul li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .operation-content ul li img {
+            width: 20px;
+        }
+
+        .operation-content a {
+            background: #3b82f6;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+        }
+
+        body.light-mode .modal-content {
+            background: #fff;
+            color: #333;
+        }
+
+        .modal-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .modal-content p {
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        body.light-mode .modal-content p {
+            color: #666;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        body.light-mode .close-btn {
+            color: #333;
+        }
+
+        /* Cybersecurity Packages Section */
+        .cyber-packages {
+            padding: 50px 0;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        body.light-mode .cyber-packages {
+            background: linear-gradient(135deg, #f0f2f5 0%, #e5e7eb 100%);
+        }
+
+        .cyber-packages::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"%3E%3Ccircle fill="%233b82f6" fill-opacity="0.1" cx="400" cy="400" r="400"/%3E%3Ccircle fill="%23f5a623" fill-opacity="0.1" cx="600" cy="200" r="200"/%3E%3C/svg%3E');
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .cyber-packages .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .package-card {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body.light-mode .package-card {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .package-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .package-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .package-card .price {
+            font-size: 2rem;
+            color: #f5a623;
+            margin-bottom: 10px;
+        }
+
+        .package-card p {
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        body.light-mode .package-card p {
+            color: #666;
+        }
+
+        .package-card ul {
+            list-style: none;
+            margin-bottom: 20px;
+            opacity: 0;
+            max-height: 0;
+            transition: opacity 0.3s, max-height 0.3s;
+        }
+
+        .package-card:hover ul {
+            opacity: 1;
+            max-height: 200px;
+        }
+
+        .package-card ul li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .package-card ul li img {
+            width: 20px;
+        }
+
+        .package-card a {
+            background: #3b82f6;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .package-card a:hover {
+            transform: scale(1.05);
+        }
+
+        /* Testimonial Carousel */
+        .testimonials {
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .testimonial-carousel {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .testimonial {
+            min-width: 100%;
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.5s;
+        }
+
+        body.light-mode .testimonial {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .testimonial p {
+            color: #94a3b8;
+            margin-bottom: 10px;
+        }
+
+        body.light-mode .testimonial p {
+            color: #666;
+        }
+
+        .testimonial h4 {
+            font-size: 1rem;
+            color: #f5a623;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-controls button {
+            background: #3b82f6;
+            border: none;
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        /* Certificates Section */
+        .pricing {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .pricing-card {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        body.light-mode .pricing-card {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .pricing-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .pricing-card p {
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        body.light-mode .pricing-card p {
+            color: #666;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .contact form {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .contact form input,
+        .contact form textarea {
+            background: #1e293b;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        body.light-mode .contact form input,
+        body.light-mode .contact form textarea {
+            background: #fff;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+
+        .contact form textarea {
+            grid-column: span 3;
+            resize: none;
+            height: 150px;
+        }
+
+        .contact form button {
+            background: #3b82f6;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            grid-column: 2;
+        }
+
+        /* Footer */
+        footer {
+            padding: 50px 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        footer h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        footer p {
+            color: #94a3b8;
+        }
+
+        body.light-mode footer p {
+            color: #666;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 10px;
+        }
+
+        footer ul li a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        footer .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        footer .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+        }
+
+        body.light-mode footer .social-links a {
+            color: #333;
+        }
+
+        footer form input {
+            background: #1e293b;
+            border: none;
+            padding: 10px;
+            border-radius: 5px 0 0 5px;
+            color: #fff;
+            width: 70%;
+        }
+
+        body.light-mode footer form input {
+            background: #fff;
+            color: #333;
+            border: 1px solid #ddd;
+            border-right: none;
+        }
+
+        footer form button {
+            background: #f5a623;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 0 5px 5px 0;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #3b82f6;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero,
+            .about,
+            .operation-center,
+            .cyber-packages .packages-grid {
+                flex-direction: column;
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content,
+            .about-content,
+            .about-services,
+            .operation-content,
+            .operation-images {
+                max-width: 100%;
+            }
+
+            .services-grid,
+            .pricing-grid,
+            .contact form,
+            footer {
+                grid-template-columns: 1fr;
+            }
+
+            .social-icons {
+                display: none;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .carousel-controls {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="container">
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+            Kimberley Msengezi
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#pages">Pages</a></li>
+        </ul>
+        <div>
+            <a href="#contact" class="contact-btn">Contact Me</a>
+            <button class="theme-toggle" aria-label="Toggle Theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero container" id="home" data-aos="fade-up">
+        <div class="hero-content">
+            <h1>Kimberley Msengezi <br> <span class="typed-text">Cybersecurity Expert</span></h1>
+            <p>Cybersecurity enthusiast with a strong foundation in vulnerability assessment, penetration testing, and security analysis. Passionate about securing systems through automated solutions.</p>
+            <div class="hero-buttons">
+                <a href="#services" class="get-started">Get Started</a>
+                <a href="#contact" class="contact">Contact Me</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="shield.png" alt="Cybersecurity Shield">
+        </div>
+    </section>
+
+    <!-- Social Icons -->
+    <div class="social-icons">
+        <a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <!-- Services Section -->
+    <section class="services container" id="services" data-aos="fade-up">
+        <h2 class="section-title"><span>My</span> Expertise</h2>
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="vul.png" alt="Vulnerability Assessment">
+                <h3>Vulnerability Assessment</h3>
+                <p>Developed an AI-powered web vulnerability scanner to detect zero-day exploits.</p>
+                <a href="#projects">Read More</a>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="pen.png" alt="Penetration Testing">
+                <h3>Penetration Testing</h3>
+                <p>Experienced in using tools like Metasploit, Burp Suite, and Nmap for security testing.</p>
+                <a href="#projects">Read More</a>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <img src="hac3.png" alt="Threat Detection">
+                <h3>Threat Detection</h3>
+                <p>Built an ML-based system for real-time advanced persistent threat detection.</p>
+                <a href="#projects">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about container" id="about" data-aos="fade-up">
+        <div class="about-content">
+            <h2>Who I Am</h2>
+            <p>I am a cybersecurity enthusiast with a strong foundation in vulnerability assessment, penetration testing, and security analysis. I am passionate about securing systems through automated solutions, including AI-driven vulnerability detection.</p>
+            <div class="stats">
+                <div class="stat">
+                    <h3>2</h3>
+                    <p>Projects</p>
+                </div>
+                <div class="stat">
+                    <h3>4</h3>
+                    <p>Certificates</p>
+                </div>
+            </div>
+            <div class="education-section" style="margin-top: 20px; max-width: 800px; font-family: Arial, sans-serif;">
+                <h2 style="color: #fff; margin-bottom: 10px;">Education</h2>
+                <div style="display: flex; align-items: center; background: #1a2a44; padding: 15px; border-radius: 8px;">
+                    <img src="lpu.png" alt="LPU Logo" class="operation-images">
+                    <div style="color: #b0b3b8;">
+                        <p style="margin: 5px 0;"><strong style="color: #fff;">Course:</strong> B.Sc (Hons) Computer Science - Cyber Security</p>
+                        <p style="margin: 5px 0;"><strong style="color: #fff;">University:</strong> Lovely Professional University</p>
+                        <p style="margin: 5px 0;"><strong style="color: #fff;">Duration:</strong> August 2023 - June 2026</p>
+                        <p style="margin: 5px 0;"><strong style="color: #fff;">CGPA:</strong> 9.40</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-services">
+            <h2>My <span>Skills</span></h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <img src="hac4.png" alt="Check Icon">
+                    <p>Cybersecurity Solutions</p>
+                </div>
+                <div class="service-item">
+                    <img src="hac3.png" alt="Check Icon">
+                    <p>Network Security</p>
+                </div>
+                <div class="service-item">
+                    <img src="logo.png" alt="Check Icon">
+                    <p>Web Security</p>
+                </div>
+                <div class="service-item">
+                    <img src="pen.png" alt="Check Icon">
+                    <p>Threat Intelligence</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="operation-center container" data-aos="fade-up">
+        <div class="operation-images">
+            <img src="pep.png" alt="Cybersecurity Operation 1">
+            <img src="vul.png" alt="Cybersecurity Operation 2">
+        </div>
+        <div class="operation-content">
+            <h2>My <span>Projects</span></h2>
+            <p>Here are some of the projects I've worked on to showcase my expertise in cybersecurity.</p>
+            <ul>
+                <li data-modal="modal1"><img src="pep.png" alt="Check Icon"> Automated Web Vulnerability Scanner</li>
+                <li data-modal="modal2"><img src="hac4.png" alt="Check Icon"> Advanced Threat Detection System</li>
+            </ul>
+            <a href="#projects">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <div class="modal" id="modal1">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <h3>Automated Web Vulnerability Scanner</h3>
+            <p>Developed a cutting-edge security scanner that goes beyond traditional vulnerability assessment. Detects overlooked vulnerabilities, including zero-days, using AI-powered behavioral analysis and hybrid scanning techniques. Provides automated patch recommendations and remediation steps for detected threats. Built using Python & Rust, integrating threat intelligence & adversarial simulations for real-time detection.</p>
+        </div>
+    </div>
+
+    <div class="modal" id="modal2">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <h3>Advanced Threat Detection System</h3>
+            <p>A machine learning-based threat detection system to identify and mitigate advanced persistent threats (APTs) in real-time. Incorporated behavioral analysis and anomaly detection to detect zero-day exploits. Used Python, TensorFlow, and Elastic Stack for implementation.</p>
+        </div>
+    </div>
+
+    <!-- Cybersecurity Packages Section -->
+    <section class="cyber-packages" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">Cybersecurity <span>Packages</span></h2>
+            <div class="packages-grid">
+                <div class="package-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="vul.png" alt="Vulnerability Assessment Package">
+                    <h3>Vulnerability Assessment</h3>
+                    <div class="price">$150</div>
+                    <p>Learn traditional and modern vulnerability assessment techniques, including zero-day detection.</p>
+                    <ul>
+                        <li><img src="hacking.png" alt="Check Icon"> Traditional Scanning Methods</li>
+                        <li><img src="hac.png" alt="Check Icon"> AI-Powered Zero-Day Detection</li>
+                        <li><img src="hac2.png" alt="Check Icon"> Automated Patch Recommendations</li>
+                    </ul>
+                    <a href="#contact">Enroll Now</a>
+                </div>
+                <div class="package-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="hac3.png" alt="Penetration Testing Package">
+                    <h3>Penetration Testing</h3>
+                    <div class="price">$200</div>
+                    <p>Master penetration testing with hands-on experience using industry-standard tools.</p>
+                    <ul>
+                        <li><img src="hac4.png" alt="Check Icon"> Metasploit & Burp Suite Training</li>
+                        <li><img src="vul.png" alt="Check Icon"> Network Security Testing</li>
+                        <li><img src="pen.png" alt="Check Icon"> Real-World Attack Simulations</li>
+                    </ul>
+                    <a href="#contact">Enroll Now</a>
+                </div>
+                <div class="package-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="hac.png" alt="Zero-Day Threat Detection Package">
+                    <h3>Zero-Day Threat Detection</h3>
+                    <div class="price">$250</div>
+                    <p>Specialized training on detecting and mitigating overlooked zero-day threats.</p>
+                    <ul>
+                        <li><img src="vul.png" alt="Check Icon"> Behavioral Analysis Techniques</li>
+                        <li><img src="hacking.png" alt="Check Icon"> Anomaly Detection with ML</li>
+                        <li><img src="hac.png" alt="Check Icon"> Real-Time Threat Mitigation</li>
+                    </ul>
+                    <a href="#contact">Enroll Now</a>
+                </div>
+            </div>
+            <!-- Testimonial Carousel -->
+            <div class="testimonials" data-aos="fade-up">
+                <div class="testimonial-carousel">
+                    <div class="testimonial">
+                        <p>"Kimberley's vulnerability assessment course was a game-changer for our team. We now detect threats we never knew existed!"</p>
+                        <h4>Nikki Sakarombe  , Cybersecurity Manager</h4>
+                    </div>
+                    <div class="testimonial">
+                        <p>"The penetration testing package provided hands-on experience that boosted my confidence in securing our systems."</p>
+                        <h4>Miriam Mavura , IT Specialist</h4>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Learning zero-day threat detection with Kimberley was invaluable. The AI-driven approach is cutting-edge!"</p>
+                        <h4>Leona Kokerai, Security Analyst</h4>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section class="pricing container" data-aos="fade-up">
+        <h2 class="section-title">My <span>Certificates</span></h2>
+        <div class="pricing-grid">
+            <div class="pricing-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="certificate1.jpg" alt="Certificate 1">
+                <h3>Edureka</h3>
+                <p>Ethical Hacking</p>
+            </div>
+            <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="certificate2.jpg" alt="Certificate 2">
+                <h3>EC-Council</h3>
+                <p>Cisco Lab Crash Course</p>
+            </div>
+            <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
+                <img src="certificate3.jpg" alt="Certificate 3">
+                <h3>EC-Council</h3>
+                <p>Ethical hacking essentials </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact container" id="contact" data-aos="fade-up">
+        <h2 class="section-title">Send Me a <span>Message</span></h2>
+        <form>
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Phone">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button type="submit">Submit Now</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="container" data-aos="fade-up">
+        <div>
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+                Kimberley Msengezi
+            </div>
+            <p>Cybersecurity enthusiast with a passion for securing systems through innovative solutions.</p>
+            
+        </div>
+        <div>
+            <h3>About Me</h3>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Contact Info</h3>
+            <p><i class="fas fa-phone"></i> +91 826462582</p>
+            <p><i class="fas fa-envelope"></i> kimberleymsengezi12@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Punjab, India</p>
+           <p> <a href="https://www.linkedin.com/in/kimberley-msengezi-74b32624a/" target="_blank">LinkedIn</a></p>
+            <p><a href="https://github.com/KimberleyMsengezi/" target="_blank">GitHub</a></p>
+        </div>
+        <div>
+            <h3>Sign Up for Updates</h3>
+            <form>
+                <input type="email" placeholder="Email Address">
+                <button type="submit">Email</button>
+            </form>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- AOS Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Hover effects for cards
+        const cards = document.querySelectorAll('.service-card, .pricing-card, .package-card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Dark Mode Toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            const icon = themeToggle.querySelector('i');
+            if (document.body.classList.contains('light-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+
+        // Back to Top Button
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+
+        // Modal Functionality
+        const modalTriggers = document.querySelectorAll('.operation-content ul li');
+        const modals = document.querySelectorAll('.modal');
+        const closeButtons = document.querySelectorAll('.close-btn');
+
+        modalTriggers.forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const modalId = trigger.getAttribute('data-modal');
+                const modal = document.getElementById(modalId);
+                modal.style.display = 'flex';
+            });
+        });
+
+        closeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.closest('.modal').style.display = 'none';
+            });
+        });
+
+        window.addEventListener('click', (e) => {
+            modals.forEach(modal => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+
+        // Testimonial Carousel
+        const carousel = document.querySelector('.testimonial-carousel');
+        const testimonials = document.querySelectorAll('.testimonial');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        let currentIndex = 0;
+
+        function showTestimonial(index) {
+            carousel.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : testimonials.length - 1;
+            showTestimonial(currentIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex < testimonials.length - 1) ? currentIndex + 1 : 0;
+            showTestimonial(currentIndex);
+        });
+
+        // Auto-scroll testimonials every 5 seconds
+        setInterval(() => {
+            currentIndex = (currentIndex < testimonials.length - 1) ? currentIndex + 1 : 0;
+            showTestimonial(currentIndex);
+        }, 5000);
+    </script>
+</body>
+</html>
